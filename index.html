@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gourmet Bistro</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+
+    a { text-decoration: none; }
+
+    /* Header / Hero */
+    .hero {
+      height: 80vh;
+      min-height: 400px;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                  url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 20px; }
+    .hero a {
+      background: #e63946;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .hero a:hover { background: #d62828; }
+
+    /* Container */
+    .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+
+    /* About */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+    .about img { width: 400px; max-width: 100%; border-radius: 12px; flex-shrink: 0; }
+    .about-text { flex: 1; }
+    .about-text h2 { font-size: 2rem; margin-bottom: 15px; color: #222; }
+    .about-text p { font-size: 1rem; line-height: 1.5; }
+
+    /* Menu */
+    .menu { margin-top: 60px; }
+    .menu h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; color: #222; }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 25px;
+    }
+    .dish {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .dish:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+    .dish img { width: 100%; height: 180px; object-fit: cover; }
+    .dish h3 { margin: 12px 0 8px; font-size: 1.1rem; color: #222; }
+    .dish p { margin-bottom: 12px; font-size: 0.9rem; color: #555; padding: 0 10px; }
+
+    /* Booking */
+.booking {
+  margin-top: 60px;
+  background: #fff; /* Match other sections */
+  padding: 50px 20px;
+  border-radius: 12px;
+  color: #333; /* Dark text like other sections */
+}
+
+.booking h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.booking form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking input,
+.booking textarea,
+.booking button {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.booking textarea { resize: none; }
+
+.booking button {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.booking button:hover { background: #d62828; }
+
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) { .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1.1rem; } }
+    @media (max-width: 768px) {
+      .hero { height: 60vh; }
+      .about { flex-direction: column; text-align: center; }
+      .about img { margin-bottom: 20px; width: 100%; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
+      .dish img { height: 160px; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 0.9rem; }
+      .dish img { height: 140px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h3>Kyaw Myo Lwin</h3>
+    <h3>Id : 240702402862</h3>
+    <h1>Gourmet Bistro</h1>
+    <p>Exquisite Cuisine. Cozy Atmosphere. Unforgettable Moments.</p>
+    <a href="#menu">View Menu</a>
+  </section>
+
+  <!-- About -->
+  <section class="container about">
+    <img src="https://i.pinimg.com/originals/3f/98/6d/3f986d340a74bc087ffcbb53b2b6b742.jpg" alt="Restaurant Interior">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        Gourmet Bistro is a modern restaurant where flavor meets elegance. Our chefs prepare
+        dishes with the freshest ingredients to create an unforgettable dining experience.
+        Enjoy a cozy atmosphere and exquisite meals that delight all senses.
+      </p>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section class="container menu" id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+
+      <div class="dish">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.OPP3Z1DhFXupzLvPOfiwbwHaE7?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Steak">
+        <h3>Grilled Ribeye Steak</h3>
+        <p>Juicy ribeye with garlic butter, served with roasted vegetables.</p>
+      </div>
+
+      <div class="dish">
+        <img src="https://c.ndtvimg.com/2021-04/umk8i7ko_pasta_625x300_01_April_21.jpg" alt="Pasta">
+        <h3>Seafood Linguine</h3>
+        <p>Fresh shrimp and scallops tossed in a creamy white wine sauce.</p>
+      </div>
+
+      <div class="dish">
+        <img src="https://therealfooddietitians.com/wp-content/uploads/2022/05/Tex-Mex-Quinoa-Salad-2-630x945.jpg" alt="Salad">
+        <h3>Quinoa & Avocado Salad</h3>
+        <p>Healthy mix of quinoa, avocado, cherry tomatoes, and vinaigrette.</p>
+      </div>
+
+      <div class="dish">
+        <img src="https://www.dishbydish.net/wp-content/uploads/Gluten-Free-Lava-Cake-Dairy-Free-Option_Final4-1024x1536.jpg" alt="Dessert">
+        <h3>Chocolate Lava Cake</h3>
+        <p>Rich chocolate cake with molten center, served with vanilla ice cream.</p>
+      </div>
+
+    </div>
+     <h3 style="margin:40px 0 20px; color:#222;">Drinks</h3>
+  <div class="menu-grid">
+    <div class="dish">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.Eh3X1I4GpEOOkBvNhmEw-QHaEJ?w=1000&h=560&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Coffee">
+      <h3>Espresso Coffee</h3>
+      <p>Freshly brewed espresso made from premium coffee beans.</p>
+    </div>
+    <div class="dish">
+      <img src="https://img.freepik.com/premium-photo/fresh-orange-juice_978921-4135.jpg" alt="Juice">
+      <h3>Fresh Orange Juice</h3>
+      <p>Cold-pressed orange juice made with fresh oranges.</p>
+    </div>
+    <div class="dish">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.mrIJw5TpktPqyNUhb6cGhgHaHa?w=512&h=512&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Cocktail">
+      <h3>Mojito Cocktail</h3>
+      <p>Refreshing cocktail with mint, lime, and soda.</p>
+    </div>
+    <div class="dish">
+      <img src="https://img.freepik.com/premium-photo/green-matcha-tea-drink-being-poured-ai-generated_154515-10508.jpg" alt="Tea">
+      <h3>Green Tea</h3>
+      <p>Organic green tea served hot or cold.</p>
+    </div>
+  </div>
+  </section>
+
+ <!-- Booking -->
+<section class="container booking" id="booking">
+  <h2>Book a Table</h2>
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <input type="date" required>
+    <input type="time" required>
+    <input type="number" placeholder="Number of Guests" min="1" required>
+    <textarea rows="4" placeholder="Special Requests (Optional)"></textarea>
+    <button type="submit">Book Now</button>
+  </form>
+</section>
+<!-- Reviews -->
+<section class="container reviews" id="reviews">
+  <h2 style="text-align:center; margin-bottom:30px;">Customer Reviews</h2>
+
+  <div style="display:flex; flex-wrap:wrap; max-width:800px; margin:0 auto; gap:40px;">
+    <!-- Overall Rating -->
+    <div style="flex:1; min-width:150px; text-align:center;">
+      <h1 style="font-size:3rem; color:#222;">5.0</h1>
+      <p style="margin-bottom:10px;">Excellent</p>
+      <p style="color:#2e7d32;">★★★★★ (3)</p>
+    </div>
+
+    <!-- Rating Bars -->
+    <div style="flex:2; min-width:250px;">
+      <div style="margin-bottom:10px;">
+        <span style="display:inline-block; width:80px;">Excellent</span>
+        <div style="display:inline-block; width:70%; background:#e0e0e0; border-radius:5px; vertical-align:middle;">
+          <div style="width:100%; height:15px; background:#2e7d32; border-radius:5px;"></div>
+        </div>
+        <span style="margin-left:10px;">3</span>
+      </div>
+      <div style="margin-bottom:10px;">
+        <span style="display:inline-block; width:80px;">Good</span>
+        <div style="display:inline-block; width:70%; background:#e0e0e0; border-radius:5px; vertical-align:middle;">
+          <div style="width:0%; height:15px; background:#2e7d32; border-radius:5px;"></div>
+        </div>
+        <span style="margin-left:10px;">0</span>
+      </div>
+      <div style="margin-bottom:10px;">
+        <span style="display:inline-block; width:80px;">Average</span>
+        <div style="display:inline-block; width:70%; background:#e0e0e0; border-radius:5px; vertical-align:middle;">
+          <div style="width:0%; height:15px; background:#2e7d32; border-radius:5px;"></div>
+        </div>
+        <span style="margin-left:10px;">0</span>
+      </div>
+      <div style="margin-bottom:10px;">
+        <span style="display:inline-block; width:80px;">Poor</span>
+        <div style="display:inline-block; width:70%; background:#e0e0e0; border-radius:5px; vertical-align:middle;">
+          <div style="width:0%; height:15px; background:#2e7d32; border-radius:5px;"></div>
+        </div>
+        <span style="margin-left:10px;">0</span>
+      </div>
+      <div style="margin-bottom:10px;">
+        <span style="display:inline-block; width:80px;">Terrible</span>
+        <div style="display:inline-block; width:70%; background:#e0e0e0; border-radius:5px; vertical-align:middle;">
+          <div style="width:0%; height:15px; background:#2e7d32; border-radius:5px;"></div>
+        </div>
+        <span style="margin-left:10px;">0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Individual Reviews -->
+  <div style="max-width:800px; margin:40px auto 0;">
+    <div style="margin-bottom:20px; border-bottom:1px solid #ccc; padding-bottom:10px;">
+      <p><strong>John D.</strong> ★★★★★</p>
+      <p>"Amazing food and cozy atmosphere. Highly recommend!"</p>
+    </div>
+    <div style="margin-bottom:20px; border-bottom:1px solid #ccc; padding-bottom:10px;">
+      <p><strong>Sarah W.</strong> ★★★★☆</p>
+      <p>"Delicious dishes and excellent service. Will come back."</p>
+    </div>
+    <div style="margin-bottom:20px; border-bottom:1px solid #ccc; padding-bottom:10px;">
+      <p><strong>Mike T.</strong> ★★★★★</p>
+      <p>"Best bistro in town! Loved everything."</p>
+    </div>
+  </div>
+</section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Gourmet Bistro • Contact: info@gourmetbistro.com</p>
+  </footer>
+
+</body>
+</html>
